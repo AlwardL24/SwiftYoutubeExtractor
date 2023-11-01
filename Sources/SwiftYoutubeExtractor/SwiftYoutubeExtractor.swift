@@ -38,6 +38,8 @@ public class YoutubeExtractor {
     
     var playerCache: [PlayerID: SignatureFunction] = [:]
     
+    public init() {}
+    
     public func formats(for videoId: String) async throws -> [Format] {
         func parse(queryString: String) -> [String: Any] {
             var queryString = queryString
