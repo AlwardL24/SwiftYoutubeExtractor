@@ -3,21 +3,21 @@ import JavaScriptCore
 
 public class YoutubeExtractor {
     public struct Format {
-        let filesize: Int?
+        public let filesize: Int?
         
-        let itag: String?
+        public let itag: String?
         
-        let quality: String?
-        let qualityDescription: String?
-        let sampleRate: Int?
-        let bitrate: Float?
+        public let quality: String?
+        public let qualityDescription: String?
+        public let sampleRate: Int?
+        public let bitrate: Float?
         
-        let width: Int?
-        let height: Int?
+        public let width: Int?
+        public let height: Int?
         
-        let url: URL
-        let fileExtension: String?
-        let mimeType: String?
+        public let url: URL
+        public let fileExtension: String?
+        public let mimeType: String?
     }
     
     struct PlayerID: Hashable, Equatable {
