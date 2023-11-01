@@ -1,8 +1,8 @@
 import Foundation
 import JavaScriptCore
 
-class YoutubeExtractor {
-    struct Format {
+public class YoutubeExtractor {
+    public struct Format {
         let filesize: Int?
         
         let itag: String?
@@ -25,7 +25,7 @@ class YoutubeExtractor {
         var signatureHash: String
     }
     
-    enum YoutubeExtractorError: Error {
+    public enum YoutubeExtractorError: Error {
         case cannotExtractSignatureFunction
         case failedToCallSignatureFunction
         case failedToStartJSContext
@@ -38,7 +38,7 @@ class YoutubeExtractor {
     
     var playerCache: [PlayerID: SignatureFunction] = [:]
     
-    func formats(for videoId: String) async throws -> [Format] {
+    public func formats(for videoId: String) async throws -> [Format] {
         func parse(queryString: String) -> [String: Any] {
             var queryString = queryString
             
