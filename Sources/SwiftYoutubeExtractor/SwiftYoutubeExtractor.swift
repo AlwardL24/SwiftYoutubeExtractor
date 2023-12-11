@@ -5,7 +5,7 @@ public class YoutubeExtractor {
     public struct Format {
         public let filesize: Int?
         
-        public let itag: String?
+        public let itag: Int?
         
         public let quality: String?
         public let qualityDescription: String?
@@ -234,8 +234,8 @@ public class YoutubeExtractor {
         let allFormats = streamingFormats + adaptiveFormats
         
         var formats: [Format] = []
-        var itags: [String] = []
-        var itagQualities: [String: String] = [:]
+        var itags: [Int] = []
+        var itagQualities: [Int: String] = [:]
         
         var playerURL: URL?
         
@@ -246,7 +246,7 @@ public class YoutubeExtractor {
                 format["type"] as? String != "FORMAT_STREAM_TYPE_OTF"
             else { continue }
             
-            let itag = format["itag"] as? String
+            let itag = format["itag"] as? Int
             let quality = format["quality"] as? String
             
             if
